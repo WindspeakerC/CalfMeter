@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>CalfMeter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <label for="customInput">Enter size(max 5 characters):</label>
+        <input type="text" id="customInput" name="customInput" maxlength="5">
+        
+        <div id="result"> Result: </div>
+
+    <script>
+        document.getElementById('customInput').addEventListener('input', function (event) {
+            // Remove non-digit and non-comma characters
+            this.value = this.value.replace(/[^0-9,.]/g, '');
+
+            // Limit the length to 5 characters
+            if (this.value.length > 5) {
+                this.value = this.value.slice(0, 5);
+            }
+
+            // Calculate result and update the "result" div
+            updateResult();
+        });
+
+        function updateResult() {
+            var inputValue = document.getElementById('customInput').value;
+            var numericValue = parseFloat(inputValue.replace(',', '.')); // Convert comma to dot for proper parsing
+
+            // Check if the numeric value is a valid number
+            if (!isNaN(numericValue)) {
+                var result = formula(numericValue);
+                document.getElementById('result').textContent = 'Result: ' + result;
+            } else {
+                document.getElementById('result').textContent = 'Result: ';
+            }
+        }
+        
+        function formula(numericValue){
+            return numericValue*2;
+        }
+    </script>
+    </body>
+</html>
