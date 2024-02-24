@@ -11,7 +11,8 @@
         <label for="customInput">Enter size(max 5 characters):</label>
         <input type="text" id="customInput" name="customInput" maxlength="5">
         
-        <div id="result"> Result: </div>
+        <div id="resultMale">   Male: </div>
+        <div id="resultFemale"> Female: </div>
 
     <script>
         document.getElementById('customInput').addEventListener('input', function (event) {
@@ -33,15 +34,22 @@
 
             // Check if the numeric value is a valid number
             if (!isNaN(numericValue)) {
-                var result = formula(numericValue);
-                document.getElementById('result').textContent = 'Result: ' + result;
+                var resultMale = formulaM(numericValue);
+                var resultFemale = formulaF(numericValue);
+                document.getElementById('resultMale').textContent = 'Result: ' + resultMale;
+                document.getElementById('resultFEmale').textContent = 'Result: ' + resultFemale;
             } else {
-                document.getElementById('result').textContent = 'Result: ';
+                document.getElementById('resultMale').textContent = 'Result: ';
+                document.getElementById('resultFemale').textContent = 'Result: ';
             }
         }
         
-        function formula(x){
+        function formulaM(x){
             return (58.459-1.979* x + 0.023 * x*x);
+        }
+
+        function formulaF(x){
+            return (58.459-1.979* x + 0.023 * x*x)+1;
         }
     </script>
     </body>
