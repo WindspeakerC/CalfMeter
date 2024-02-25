@@ -2,17 +2,19 @@
 
 <html>
     <head>
-        <title>CalfMeter</title>
+        <title>Calf's Weight Estimator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-
-        <label for="customInput">Enter size(max 5 characters):</label>
-        <input type="text" id="customInput" name="customInput" maxlength="5">
+        <p>Calf's Weight Estimator</p>
+        <label for="customInput"> Enter Heart Girth:</label>
+        <input type="text" id="customInput" name="customInput" maxlength="5">*
         
         <div id="resultMale"> Result Male: </div>
         <div id="resultFemale"> Result Female: </div>
+
+        <div>* limit:61 to 114 centimeters</div>
 
     <script>
         document.getElementById('customInput').addEventListener('input', function (event) {
@@ -49,7 +51,7 @@
         }
 
         function formulaF(x){
-            return (58.459-1.979* x + 0.023 * x*x)+1;
+            return (58.459-1.979* x + 0.023 * x*x);
         }
     </script>
     </body>
