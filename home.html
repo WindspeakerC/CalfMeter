@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
-        <title>Calf's Weight Estimator</title>
+        <title lang="en">Calf's Weight Estimator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -15,21 +15,24 @@
         </style>
     </head>
     <body>
-        <h1>Calf's Weight Estimator</h1>
-        <label for="customInput"> Enter Heart Girth*:</label> 
+        <h1 lang="en">Calf's Weight Estimator</h1>
+        <h1 lang="pt">Estimador de Peso de Vitelos</h1>
+        <label lang="en" for="customInput"> Enter Heart Girth*:</label>
+        <label lang="pt" for="customInput"> Insira a envergadura do peito*:</label> 
         <input type="text" id="customInput" name="customInput" maxlength="5"> cm
         
         <div class="box-container">
-            <div id="resultMale" > Weight: </div>
+            <div lang="en" id="resultMale" > Weight: </div>
+            <div lang="pt" id="resultMale" > Peso: </div>
             <!-- <div id="resultFemale"> Result Female: </div> -->
         </div>
-        <div>*Enter value between: 61 to 114 cm</div>
+        <div lang="en">*Enter value between: 61 to 114 cm</div>
         
         <br><br><br>
         
-        <h2>How to measure Heart Girth</h2>
+        <h2 lang="en">How to measure Heart Girth</h2>
 
-        <div class="box-container">
+        <div lang="en" class="box-container">
             <p>Place a normal measuring tape around the calf's chest, immediately behind the scapula.<br>
                 Pressure enough to pass through the air coat, but not more. The idea is to get it around the skin without squeezing it.<br>
                 See the images below<br>
@@ -43,7 +46,7 @@
 
         <div class="box-container">
             <footer>
-                <p>&copy; 2024 Your Website</p>
+                <p lang="en">&copy; 2024 Your Website</p>
                 <p>Évora, Portugal 2024</p>
                 <img src="image.jpg" alt="Description of the image" width="50" height="30" title="Image Title">
                 <img src="image.jpg" alt="Description of the image" width="50" height="30" title="Image Title">
@@ -62,6 +65,18 @@
         
 
     <script>
+
+        function switchLanguage(langCode) {
+            const elements = document.querySelectorAll('[lang]');
+            elements.forEach(element => {
+                if (element.getAttribute('lang') === langCode) {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+        }
+        
         document.getElementById('customInput').addEventListener('input', function (event) {
             // Remove non-digit and non-comma characters
             this.value = this.value.replace(/[^0-9,.]/g, '');
