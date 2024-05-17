@@ -55,6 +55,8 @@
                     <div lang="en" > Weight: </div>
                     <div lang="pt" style="display: none;"> Peso: </div>
                     <div id="resultMale"></div>
+                    <div id="limInf"></div>
+                    <div id="limSup"></div>
                     <!-- <div id="resultFemale"> Result Female: </div> -->
                 </div>
                 <div lang="en">*Enter value between: 61 to 114 cm</div>
@@ -135,8 +137,10 @@
             // Check if the numeric value is a valid number
             if (!isNaN(numericValue)) {
                 var resultMale = parseFloat(formulaM(numericValue)).toFixed(1);
+                var limInf = parseFloat(formulaLimInf(numericValue)).toFixed(1);
+                var limSup = parseFloat(formulaLimSup(numericValue)).toFixed(1);
                 //var resultFemale = parseFloat(formulaF(numericValue)).toFixed(2);
-                document.getElementById('resultMale').textContent = resultMale + ' kg';
+                document.getElementById('resultMale').textContent = resultMale + ' kg' + ' (lim. inf.' + limInf + 'kg, lim. sup.' + limSup + 'kg)';
                 //document.getElementById('resultFemale').textContent = 'Result Female: ' + resultFemale;
             } else {
                 document.getElementById('resultMale').textContent = 'N/A';
@@ -146,6 +150,14 @@
         
         function formulaM(x){
             return (58.459-1.979* x + 0.023 * x*x);
+        }
+
+        function formulaLimInf(x){
+            return (26.011-2.753* x + 0.018 * x*x);
+        }
+        
+        function formulaLimSup(x){
+            return (90.907-1.223* x + 0.027 * x*x);
         }
 
         function formulaF(x){
