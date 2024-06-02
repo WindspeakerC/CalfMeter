@@ -40,8 +40,14 @@
             box-sizing: border-box; /* Ensure padding is included in the width */
         }
 
-        .eng-button {
-            background: url('eng.svg') no-repeat center center;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .eng-button, .pt-button{
             background-size: cover; /* Ensure the image scales correctly */
             width: 100px; /* Set a width for the button */
             height: 50px; /* Set a height for the button */
@@ -49,15 +55,14 @@
             cursor: pointer; /* Change cursor to pointer */
             outline: none; /* Remove outline on focus */
         }
+        
+        .eng-button {
+            background: url('eng.svg') no-repeat center center;
+
+        }
 
         .pt-button {
             background: url('pt.svg') no-repeat center center;
-            background-size: cover; /* Ensure the image scales correctly */
-            width: 100px; /* Set a width for the button */
-            height: 50px; /* Set a height for the button */
-            border: none; /* Remove default button border */
-            cursor: pointer; /* Change cursor to pointer */
-            outline: none; /* Remove outline on focus */
         }
 
         .result {
@@ -79,10 +84,14 @@
     <div class="outer-container">
         <div class="inner-container">
 
-            <h1 lang="en">Calf's Weight Estimator</h1>
-            <h1 lang="pt" style="display: none;">Estimador de Peso de Vitelos</h1>
-            <button class="eng-button" onclick="switchLanguage('en')"></button>
-            <button class="pt-button" onclick="switchLanguage('pt')"></button>
+            <div class="header">
+                <h1 lang="en">Calf's Weight Estimator</h1>
+                <h1 lang="pt" style="display: none;">Estimador de Peso de Vitelos</h1>
+                <div>
+                    <button class="eng-button" onclick="switchLanguage('en')"></button>
+                    <button class="pt-button" onclick="switchLanguage('pt')"></button>
+                </div>
+            </div>
             <br><br><br><br>
 
 
