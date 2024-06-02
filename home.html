@@ -187,7 +187,8 @@
                 var resultMale = parseFloat(formulaM(numericValue)).toFixed(1);
                 var limInf = parseFloat(formulaLimInf(numericValue)).toFixed(1);
                 var limSup = parseFloat(formulaLimSup(numericValue)).toFixed(1);
-                document.getElementById('resultMale').textContent = resultMale + ' kg' + ' (lim. inf.' + limInf + 'kg, lim. sup.' + limSup + 'kg)';
+                /* document.getElementById('resultMale').textContent = resultMale + ' kg' + ' (lim. inf.' + limInf + 'kg, lim. sup.' + limSup + 'kg)'; */
+                document.getElementById('resultMale').textContent = resultMale + ' kg';
             } else {
                 document.getElementById('resultMale').textContent = 'N/A';
             }
