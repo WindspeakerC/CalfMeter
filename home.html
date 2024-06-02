@@ -8,6 +8,8 @@
         body {
             margin: 0;
             display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             justify-content: center;
             align-items: center;
             height: 100%;
@@ -30,6 +32,7 @@
             box-sizing: border-box; /* Include padding in width calculation */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1
         }
 
         .box-container {
@@ -76,6 +79,17 @@
             font-size: 24px; /* Adjust the font size as needed */
             font-weight: bold; /* Optional: Make the text bold */
             color: #333; /* Optional: Change the text color */
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+            border-top: 1px solid #ccc; /* Optional: add top border */
         }
 
         .logo{
@@ -151,7 +165,7 @@
             <img src="image2.jpg" width="225vw" height="300vw">
             <img src="image3.jpg" width="225vw" height="300vw">
     
-            <footer>
+            <div class="footer">
                 <img class="logo" src="logo01.png">
                 <img class="logo" src="logo02.png">
                 <img class="logo" src="logo03.png">
@@ -166,10 +180,22 @@
                 <p lang="en">Contact: fsilva@uevora.pt</p>
                 <p lang="pt" style="display: none;">Contacto: fsilva@uevora.pt</p>
                 <p>Évora, Portugal 2024</p>
-            </footer>
+            </div>
         </div>
     </div>      
 
+
+
+
+
+
+
+
+
+
+
+
+    
     <script>
         function switchLanguage(langCode) {
             const elements = document.querySelectorAll('[lang]');
