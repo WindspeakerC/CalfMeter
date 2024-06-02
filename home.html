@@ -57,8 +57,8 @@
         
         .eng-button, .pt-button{
             background-size: cover; /* Ensure the image scales correctly */
-            width: 150px; /* Set a width for the button */
-            height: 50px; /* Set a height for the button */
+            width: 14%; /* Set a width for the button */
+            height: 7%; /* Set a height for the button */
             border: none; /* Remove default button border */
             cursor: pointer; /* Change cursor to pointer */
             outline: none; /* Remove outline on focus */
@@ -74,7 +74,7 @@
             max-width: 10%; /* Set the maximum width for the logos */
             max-height: 10%; /* Set the maximum height for the logos */
             display: inline-block;
-            margin: 2px; /* Add some spacing between logos */
+            margin: 0.9%; /* Add some spacing between logos */
         }
         
     </style>
@@ -114,13 +114,11 @@
                 <label lang="pt" for="customInput" style="display: none;">Insira a envergadura do peito*:</label>
                 <input type="text" id="customInput" name="customInput" maxlength="5"> cm
                 <div lang="en">*Enter value between: 61 to 114 cm</div>
+                <div lang="pt" style="display: none;">*Insira valor entre: 61 a 114 cm</div>
                 
                 <div lang="en">Weight:</div>
                 <div lang="pt" style="display: none;">Peso:</div>
-                <div class="result" id="resultMale"></div>
-
-
-                <div lang="pt" style="display: none;">*Insira valor entre: 61 a 114 cm</div>
+                <div class="result" id="resultMale"></div>            
             </div>
             
             <br><br><br>
