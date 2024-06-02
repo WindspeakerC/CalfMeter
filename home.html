@@ -40,6 +40,16 @@
             box-sizing: border-box; /* Ensure padding is included in the width */
         }
 
+        .image-button {
+            background: url('Flag_of_the_United_Kingdom_(1-2).svg.png') no-repeat center center; /* Path to your image */
+            background-size: contain; /* Ensure the image scales correctly */
+            width: 100px; /* Set a width for the button */
+            height: 100px; /* Set a height for the button */
+            border: none; /* Remove default button border */
+            cursor: pointer; /* Change cursor to pointer */
+            outline: none; /* Remove outline on focus */
+        }
+
     </style>
 </head>
 <body>
@@ -48,8 +58,8 @@
 
             <h1 lang="en">Calf's Weight Estimator</h1>
             <h1 lang="pt" style="display: none;">Estimador de Peso de Vitelos</h1>
-            <img src="Flag_of_the_United_Kingdom_(1-2).svg.png" alt="English" onclick="switchLanguage('en')">
-            <img src="Flag_of_Portugal.svg.png" alt="Portuguese" onclick="switchLanguage('pt')">
+            <button class="image-button" onclick="switchLanguage('en')"></button>
+            <button class="image-button" style="background: url('Flag_of_Portugal.svg.png') no-repeat center center;" onclick="switchLanguage('pt')"></button>
             <br><br><br><br>
             <label lang="en" for="customInput">Enter Heart Girth*:</label>
             <label lang="pt" for="customInput" style="display: none;">Insira a envergadura do peito*:</label>
