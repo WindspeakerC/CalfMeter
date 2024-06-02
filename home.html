@@ -10,7 +10,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 100%;
             background-color: #f0f0f0;
         }
 
@@ -71,9 +71,7 @@
             <button class="eng-button" onclick="switchLanguage('en')"></button>
             <button class="pt-button" onclick="switchLanguage('pt')"></button>
             <br><br><br><br>
-            <label lang="en" for="customInput">Enter Heart Girth*:</label>
-            <label lang="pt" for="customInput" style="display: none;">Insira a envergadura do peito*:</label>
-            <input type="text" id="customInput" name="customInput" maxlength="5"> cm
+
 
             <div class="box-container">
                 <p lang="en">
@@ -87,7 +85,11 @@
                     O modelo pode ser aplicado noutros vitelos (cruzados ou com idades diferentes), no entanto, o erro poderá aumentar.<br>
                 </p>
             </div>
+            <br><br>
 
+            <label lang="en" for="customInput">Enter Heart Girth*:</label>
+            <label lang="pt" for="customInput" style="display: none;">Insira a envergadura do peito*:</label>
+            <input type="text" id="customInput" name="customInput" maxlength="5"> cm
             
             <div class="box-container">
                 <div lang="en">Weight:</div>
