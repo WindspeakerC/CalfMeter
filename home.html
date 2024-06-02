@@ -60,6 +60,12 @@
             outline: none; /* Remove outline on focus */
         }
 
+        .result {
+            font-size: 24px; /* Adjust the font size as needed */
+            font-weight: bold; /* Optional: Make the text bold */
+            color: #333; /* Optional: Change the text color */
+        }
+
         .logo{
             max-width: 10%; /* Set the maximum width for the logos */
             max-height: 10%; /* Set the maximum height for the logos */
@@ -99,10 +105,11 @@
                 <label lang="en" for="customInput">Enter Heart Girth*:</label>
                 <label lang="pt" for="customInput" style="display: none;">Insira a envergadura do peito*:</label>
                 <input type="text" id="customInput" name="customInput" maxlength="5"> cm
-            
+
+                
                 <div lang="en">Weight:</div>
                 <div lang="pt" style="display: none;">Peso:</div>
-                <div id="resultMale" style="display: inline-block;"></div>
+                <div class="result" id="resultMale"></div>
 
                 <div lang="en">*Enter value between: 61 to 114 cm</div>
                 <div lang="pt" style="display: none;">*Insira valor entre: 61 a 114 cm</div>
