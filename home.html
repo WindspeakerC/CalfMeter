@@ -57,11 +57,15 @@
         
         .eng-button, .pt-button{
             background-size: cover; /* Ensure the image scales correctly */
-            width: 1000%; /* Set a width for the button */
-            height: 500%; /* Set a height for the button */
+            width: 100; /* Set a width for the button */
+            height: 50; /* Set a height for the button */
             border: none; /* Remove default button border */
             cursor: pointer; /* Change cursor to pointer */
             outline: none; /* Remove outline on focus */
+        }
+
+        .input {
+            font-size: 18px; /* Adjust the font size as needed */
         }
         
         .result {
@@ -109,7 +113,7 @@
             
             <br><br>
             
-            <div>
+            <div class="input">
                 <label lang="en" for="customInput">Enter Heart Girth*:</label>
                 <label lang="pt" for="customInput" style="display: none;">Insira a envergadura do peito*:</label>
                 <input type="text" id="customInput" name="customInput" maxlength="5"> cm
