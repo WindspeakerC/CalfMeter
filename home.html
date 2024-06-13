@@ -12,6 +12,7 @@
             align-items: center;
             height: 100%;
             background-color: #f0f0f0;
+            font-size: 4vw; /* Base font size for small screens */
         }
 
         .outer-container {
@@ -44,6 +45,24 @@
             text-align: center;
         }
 
+        @media (max-width: 600px) {
+            .responsive-text {
+                font-size: 4vw; /* Smaller text size for small screens */
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 1200px) {
+            .responsive-text {
+                font-size: 2.5vw; /* Medium text size for medium screens */
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .responsive-text {
+                font-size: 1.5vw; /* Larger text size for larger screens */
+            }
+        }
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -70,12 +89,12 @@
         }
 
         .input {
-            font-size: 18px; /* Adjust the font size as needed */
+            font-size: 2vw; /* Adjust the font size as needed */
             text-align: center;
         }
         
         .result {
-            font-size: 24px; /* Adjust the font size as needed */
+            font-size: 2.5vw; /* Adjust the font size as needed */
             font-weight: bold; /* Optional: Make the text bold */
             color: #333; /* Optional: Change the text color */
         }
@@ -113,7 +132,7 @@
             <br><br>
 
 
-            <div class="box-container">
+            <div class="box-container responsive-text">
                 <p lang="en">
                     This website allows you to estimate the weight of Holstein-Friesian calves.<br>
                     The model is validated for calves (male and female) aged between 1 and 90 days old, with an average error of 1.4kg.<br>
@@ -128,7 +147,7 @@
             
             <br><br>
             
-            <div class="input">
+            <div class="input responsive-text">
                 <label lang="en" for="customInput"><b>Enter Heart Girth</b>*:</label>
                 <label lang="pt" for="customInput" style="display: none;">Insira o Perímetro torácico*:</label>
                 <br>
@@ -138,15 +157,15 @@
                 <br>
                 <div lang="en">Weight:</div>
                 <div lang="pt" style="display: none;">Peso:</div>
-                <div class="result" id="resultMale"></div>            
+                <div class="result responsive-text" id="resultMale"></div>            
             </div>
             
             <br><br><br>
             
-            <h2 lang="en" style="text-align: center;">How to measure Heart Girth</h2>
-            <h2 lang="pt" style="text-align: center; display: none;">Como medir Envergadura do Peito</h2>
+            <h2 lang="en" class="responsive-text" style="text-align: center;">How to measure Heart Girth</h2>
+            <h2 lang="pt" class="responsive-text" style="text-align: center; display: none;">Como medir Envergadura do Peito</h2>
     
-            <div class="box-container">
+            <div class="box-container responsive-text">
                 <p lang="en">
                     The calf should be facing forward with its head parallel to its body.<br>
                     Place an ordinary measuring tape measure around the calf's chest, just behind the scapula.<br>
@@ -168,7 +187,7 @@
 
 
             <br><br><br>
-            <div class="footer">
+            <div class="footer responsive-text">
                 <div style="max-width: 80%">
                     <div>
                         <img class="logo" src="logo01.png">
@@ -186,77 +205,4 @@
                 </div>
                 <div style="min-width: 20%">
                     <p lang="en" style="text-align: right;">Contact:fsilva@uevora.pt</p>
-                    <p lang="pt" style="text-align: right; display: none;">Contacto:fsilva@uevora.pt</p>
-                    <p style="text-align: right;">Évora, Portugal 2024</p>
-                </div>
-            </div>
-        </div>
-    </div>      
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <script>
-        function switchLanguage(langCode) {
-            const elements = document.querySelectorAll('[lang]');
-            elements.forEach(element => {
-                if (element.getAttribute('lang') === langCode) {
-                    element.style.display = 'block';
-                } else {
-                    element.style.display = 'none';
-                }
-            });
-        }
-        
-        document.getElementById('customInput').addEventListener('input', function (event) {
-            // Remove non-digit and non-comma characters
-            this.value = this.value.replace(/[^0-9,.]/g, '');
-
-            // Limit the length to 5 characters
-            if (this.value.length > 5) {
-                this.value = this.value.slice(0, 5);
-            }
-
-            // Calculate result and update the "result" div
-            updateResult();
-        });
-
-        function updateResult() {
-            var inputValue = document.getElementById('customInput').value;
-            var numericValue = parseFloat(inputValue.replace(',', '.')); // Convert comma to dot for proper parsing
-
-            // Check if the numeric value is a valid number
-            if (!isNaN(numericValue)) {
-                var resultMale = parseFloat(formulaM(numericValue)).toFixed(1);
-                var limInf = parseFloat(formulaLimInf(numericValue)).toFixed(1);
-                var limSup = parseFloat(formulaLimSup(numericValue)).toFixed(1);
-                /* document.getElementById('resultMale').textContent = resultMale + ' kg' + ' (lim. inf.' + limInf + 'kg, lim. sup.' + limSup + 'kg)'; */
-                document.getElementById('resultMale').textContent = resultMale + ' kg';
-            } else {
-                document.getElementById('resultMale').textContent = 'N/A';
-            }
-        }
-        
-        function formulaM(x){
-            return (58.459-1.979* x + 0.023 * x*x);
-        }
-
-        function formulaLimInf(x){
-            return (26.011-2.753* x + 0.018 * x*x);
-        }
-        
-        function formulaLimSup(x){
-            return (90.907-1.223* x + 0.027 * x*x);
-        }
-    </script>
-</body>
-</html>
+                    <p lang="pt" style="text
